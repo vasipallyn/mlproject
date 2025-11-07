@@ -2,6 +2,9 @@ from flask import Flask,request,render_template
 import numpy as np
 import pandas as pd
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
+import tempfile, os
+tempfile.tempdir = '/mnt/temp'
+os.environ['TMPDIR'] = '/mnt/temp'
 
 
 from sklearn.preprocessing import StandardScaler
